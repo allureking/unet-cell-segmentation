@@ -1,0 +1,24 @@
+# U-Net Cell Segmentation — Default Configuration
+# ================================================
+
+# Data
+data_path: "data/train_data.npz"
+val_split: 0.2
+
+# Model
+base_features: 64          # First encoder layer channels (64 -> 128 -> 256 -> 512 -> 1024)
+
+# Training
+epochs: 50
+batch_size: 16
+learning_rate: 0.001
+weight_decay: 0.00001
+loss: "bce_dice"            # Options: bce, dice, bce_dice, focal, tversky
+augmentation: true
+
+# Reproducibility
+seed: 42
+
+# System
+num_workers: 0
+checkpoint_dir: "checkpoints"
