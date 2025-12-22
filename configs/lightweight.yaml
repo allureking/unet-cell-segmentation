@@ -1,0 +1,25 @@
+# Lightweight U-Net — Configuration
+# ===================================
+# For quick experiments and resource-constrained environments.
+
+# Data
+data_path: "data/train_data.npz"
+val_split: 0.2
+
+# Model
+base_features: 32          # Half the standard (32 -> 64 -> 128 -> 256 -> 512)
+
+# Training
+epochs: 30
+batch_size: 32
+learning_rate: 0.001
+weight_decay: 0.0001
+loss: "bce_dice"
+augmentation: true
+
+# Reproducibility
+seed: 42
+
+# System
+num_workers: 0
+checkpoint_dir: "checkpoints"

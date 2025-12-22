@@ -1,0 +1,25 @@
+# Attention U-Net — Configuration
+# ================================
+
+# Data
+data_path: "data/train_data.npz"
+val_split: 0.2
+
+# Model
+model: "attention_unet"
+base_features: 64
+
+# Training
+epochs: 60
+batch_size: 16
+learning_rate: 0.0005
+weight_decay: 0.00001
+loss: "tversky"             # Tversky loss: penalize missed cells more
+augmentation: true
+
+# Reproducibility
+seed: 42
+
+# System
+num_workers: 0
+checkpoint_dir: "checkpoints"
